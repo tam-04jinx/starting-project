@@ -4,10 +4,55 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="style.css" />
-		<title>Basic Page</title>
+		<title>GitHub Agentic Learning Journey</title>
 	</head>
 	<body>
-		<h1>Hello, World! adding</h1>
-		<p>This is a basic HTML file.</p>
+		<main class="app" aria-labelledby="page-title">
+			<header class="app-header">
+				<div>
+					<h1 id="page-title">GitHub Agentic Learning Journey</h1>
+					<p>Track milestones and capture daily reflection notes.</p>
+				</div>
+				<button id="themeToggle" class="btn secondary" type="button" aria-label="Toggle theme">
+					🌙 Dark Mode
+				</button>
+			</header>
+
+			<section class="card" aria-labelledby="milestones-title">
+				<h2 id="milestones-title">Learning Milestones</h2>
+				<form id="milestoneForm" class="stack">
+					<label for="milestoneInput">Add a milestone</label>
+					<div class="row">
+						<input
+							id="milestoneInput"
+							type="text"
+							placeholder="Example: Create first pull request"
+							required
+						/>
+						<button class="btn primary" type="submit">Add</button>
+					</div>
+				</form>
+				<ul id="milestoneList" class="item-list" aria-live="polite"></ul>
+				<p id="progressLabel" class="meta">0 of 0 completed</p>
+			</section>
+
+			<section class="card" aria-labelledby="reflections-title">
+				<h2 id="reflections-title">Daily Reflections</h2>
+				<form id="reflectionForm" class="stack">
+					<label for="reflectionInput">What did you learn today?</label>
+					<textarea
+						id="reflectionInput"
+						rows="4"
+						placeholder="Write your learning summary..."
+						required
+					></textarea>
+					<button class="btn primary" type="submit">Save reflection</button>
+				</form>
+				<ul id="reflectionList" class="item-list" aria-live="polite"></ul>
+			</section>
+		</main>
+
+		<div id="toast" class="toast" role="status" aria-live="polite"></div>
+		<script src="script.js" defer></script>
 	</body>
 </html>
