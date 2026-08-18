@@ -1,0 +1,66 @@
+name: Learning Task
+description: Plan and track a focused GH-600 or agentic-development learning task.
+title: "Learning Task: "
+labels:
+  - agentic-learning
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template for a scoped learning task that should result in a reviewable artifact such as a branch, PR, workflow, prompt, or config file.
+
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal
+      description: What do you want to learn or implement?
+      placeholder: Learn how repo-wide Copilot instructions shape agent behavior.
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+      description: What is in scope and out of scope for this task?
+      placeholder: |
+        In scope:
+        - Add one repo-wide instructions file
+        - Keep changes documentation-only
+
+        Out of scope:
+        - Custom agents
+        - Workflow changes
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance Criteria
+      description: What must be true before this issue is complete?
+      placeholder: |
+        - [ ] Add the required file
+        - [ ] Keep changes small and reviewable
+        - [ ] Link the PR back to this issue
+        - [ ] Summarize validation
+    validations:
+      required: true
+
+  - type: textarea
+    id: validation
+    attributes:
+      label: Validation Plan
+      description: How will you verify the result?
+      placeholder: Read the file, review the diff, and confirm the branch/PR workflow is followed.
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Add links, references, or study-guide mapping.
+      placeholder: Related GH-600 domain, docs links, or repo context.
+    validations:
+      required: false
