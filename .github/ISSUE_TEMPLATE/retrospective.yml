@@ -1,0 +1,73 @@
+name: Retrospective
+description: Capture what was learned, validated, and tuned after completing a task.
+title: "Retrospective: "
+labels:
+  - agentic-learning
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template after finishing a learning task or PR. Focus on evidence, drift, validation, and next improvements.
+
+  - type: input
+    id: related-work
+    attributes:
+      label: Related Issue or PR
+      description: Link the issue or PR this retrospective is about.
+      placeholder: "#17 or #20"
+    validations:
+      required: true
+
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Outcome
+      description: What changed or what was delivered?
+      placeholder: Added repo-wide Copilot instructions and opened a PR.
+    validations:
+      required: true
+
+  - type: textarea
+    id: learning
+    attributes:
+      label: What I Learned
+      description: What new concept or workflow understanding did you gain?
+      placeholder: Learned how durable repo instructions guide future agent behavior.
+    validations:
+      required: true
+
+  - type: textarea
+    id: validation
+    attributes:
+      label: Validation Evidence
+      description: What evidence showed the task was correct?
+      placeholder: Reviewed file contents, checked branch status, and confirmed PR linkage.
+    validations:
+      required: true
+
+  - type: textarea
+    id: drift
+    attributes:
+      label: Drift or Friction Observed
+      description: Did context drift, unclear scope, or tooling friction appear?
+      placeholder: Note stale context, auth issues, workflow confusion, or none.
+    validations:
+      required: true
+
+  - type: textarea
+    id: tuning
+    attributes:
+      label: Tuning or Follow-up
+      description: What should be improved next time?
+      placeholder: Tighten prompts, add better validation, or improve instructions/templates.
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Optional extra references or reminders.
+      placeholder: Link docs, study-guide section, or future issue.
+    validations:
+      required: false
