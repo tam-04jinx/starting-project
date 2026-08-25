@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="../style.css" />
+		<title>GH-600 Domain 1: Architecture and SDLC</title>
+	</head>
+	<body>
+		<main class="app domain-page">
+			<header class="app-header">
+				<div>
+					<a class="back-link" href="../index.html">← Back to study sprint</a>
+					<h1>Domain 1: Prepare agent architecture and SDLC processes</h1>
+					<p>Choose work an agent can perform safely, with clear outcomes and GitHub-native review.</p>
+				</div>
+			</header>
+			<nav class="domain-navigation" aria-label="GH-600 domains">
+				<a aria-current="page" href="architecture-sdlc.html">1. Architecture</a><a href="tools-environment.html">2. Tools</a><a href="memory-execution.html">3. Memory</a><a href="evaluation-tuning.html">4. Evaluation</a><a href="multi-agent.html">5. Coordination</a><a href="guardrails-accountability.html">6. Guardrails</a>
+			</nav>
+			<section class="card domain-content">
+				<h2>What to recognize</h2>
+				<p>A strong agent task has bounded inputs, a reviewable output, success criteria, controls, and evidence. Planning states intent; validation proves the result.</p>
+				<div class="evidence-grid">
+					<article><h3>Inputs</h3><p>Issue, failing test, PR comment, or workflow log defines the work.</p></article>
+					<article><h3>Outputs</h3><p>Branch, pull request, artifact, or test result makes work reviewable.</p></article>
+					<article><h3>Controls</h3><p>Limited tools, required checks, reviews, and rulesets constrain autonomy.</p></article>
+				</div>
+			</section>
+			<section class="card domain-content">
+				<h2>Decision guide</h2>
+				<ul>
+					<li>Use low autonomy for reading, searching, summarizing, and planning.</li>
+					<li>Use medium autonomy for scoped edits and tests on a branch.</li>
+					<li>Require human approval for production-sensitive, irreversible, policy, or security decisions.</li>
+					<li>Keep the delivery path visible: issue → branch → PR → checks → review → merge.</li>
+				</ul>
+			</section>
+			<section class="card domain-content">
+				<h2>Recall checks</h2>
+				<ol><li>What artifact shows that a plan was reviewed?</li><li>Which control blocks an unreviewed merge?</li><li>Why is “be careful” not an enforceable guardrail?</li></ol>
+				<p class="source-note">Adapted from the <a href="https://gist.github.com/naim149/a8aa41c7468685b7d984822c38863aae">GH-600 Public Study Guide</a>.</p>
+			</section>
+		</main>
+	</body>
+</html>

@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="../style.css" />
+		<title>GH-600 Domain 6: Guardrails and Accountability</title>
+	</head>
+	<body>
+		<main class="app domain-page">
+			<header class="app-header"><div><a class="back-link" href="../index.html">← Back to study sprint</a><h1>Domain 6: Implement guardrails and accountability</h1><p>Layer preventive, detective, and corrective controls around agent autonomy.</p></div></header>
+			<nav class="domain-navigation" aria-label="GH-600 domains"><a href="architecture-sdlc.html">1. Architecture</a><a href="tools-environment.html">2. Tools</a><a href="memory-execution.html">3. Memory</a><a href="evaluation-tuning.html">4. Evaluation</a><a href="multi-agent.html">5. Coordination</a><a aria-current="page" href="guardrails-accountability.html">6. Guardrails</a></nav>
+			<section class="card domain-content"><h2>Control layers</h2><div class="evidence-grid"><article><h3>Preventive</h3><p>Least-privilege tools, rulesets, branch protection, MCP allowlists, and required reviews.</p></article><article><h3>Detective</h3><p>Code scanning, secret scanning, dependency review, logs, artifacts, and audit events.</p></article><article><h3>Corrective</h3><p>Stop a session, revert a PR, rotate secrets, or remove access after an incident.</p></article></div></section>
+			<section class="card domain-content"><h2>Choose the enforcing control</h2><ul><li>Use rulesets or branch protection to prevent unsafe merges.</li><li>Use environment required reviewers to gate deployments.</li><li>Use a pre-tool hook plus branch protection to block direct shell pushes.</li><li>Use secret scanning for exposed secrets, CodeQL for vulnerable code, and dependency review for dependency changes.</li><li>Use session logs and the PR timeline to understand agent actions; inspect <code>artifact.destroy</code> in audit logs for manual artifact deletion.</li></ul><p>Instructions guide behavior. Tool lists limit capabilities. Hooks intercept actions. Branch policy enforces the repository outcome.</p></section>
+			<section class="card domain-content"><h2>Recall checks</h2><ol><li>Which control requires human approval before deployment?</li><li>What should happen when workflow changes from a Copilot PR do not run?</li><li>Why should high-risk work use more than one control layer?</li></ol><p class="source-note">Adapted from the <a href="https://gist.github.com/naim149/a8aa41c7468685b7d984822c38863aae">GH-600 Public Study Guide</a>.</p></section>
+		</main>
+	</body>
+</html>

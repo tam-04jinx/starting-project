@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="../style.css" />
+		<title>GH-600 Domain 3: Memory and Execution</title>
+	</head>
+	<body>
+		<main class="app domain-page">
+			<header class="app-header"><div><a class="back-link" href="../index.html">← Back to study sprint</a><h1>Domain 3: Manage memory, state, and execution</h1><p>Know what persists, what can resume, and what evidence teammates can inspect.</p></div></header>
+			<nav class="domain-navigation" aria-label="GH-600 domains"><a href="architecture-sdlc.html">1. Architecture</a><a href="tools-environment.html">2. Tools</a><a aria-current="page" href="memory-execution.html">3. Memory</a><a href="evaluation-tuning.html">4. Evaluation</a><a href="multi-agent.html">5. Coordination</a><a href="guardrails-accountability.html">6. Guardrails</a></nav>
+			<section class="card domain-content"><h2>State types</h2><div class="evidence-grid"><article><h3>Short-term context</h3><p>Current prompt and session context; useful, but not a durable handoff.</p></article><article><h3>Copilot Memory</h3><p>Reusable repository facts or user preferences that must be checked for freshness.</p></article><article><h3>Durable state</h3><p>PRs, issues, commits, artifacts, logs, and check runs that are auditable.</p></article></div></section>
+			<section class="card domain-content"><h2>Execution reasoning</h2><ul><li>A stable session ID enables session resume; memory and sessions are different concepts.</li><li>Use an artifact or job output to pass state between workflow jobs.</li><li>Use a PR comment or review to preserve a human decision.</li><li>Detect context drift by checking the current branch, re-reading files, and comparing assumptions with current evidence.</li><li>Never store secrets in memory, prompts, instructions, or comments.</li></ul></section>
+			<section class="card domain-content"><h2>Recall checks</h2><ol><li>Which log evidence means a session was resumed?</li><li>What durable artifact should carry a review decision?</li><li>What can cause an agent’s context to drift?</li></ol><p class="source-note">Adapted from the <a href="https://gist.github.com/naim149/a8aa41c7468685b7d984822c38863aae">GH-600 Public Study Guide</a>.</p></section>
+		</main>
+	</body>
+</html>
