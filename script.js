@@ -14,6 +14,22 @@ const progressLabel = document.getElementById("progressLabel");
 const reflectionForm = document.getElementById("reflectionForm");
 const reflectionInput = document.getElementById("reflectionInput");
 const reflectionList = document.getElementById("reflectionList");
+const loadPlanButton = document.getElementById("loadPlanButton");
+
+const STARTER_MILESTONES = [
+	"Map the six GH-600 domains and their relative weights",
+	"Write a reviewable agent task with inputs, outputs, controls, and evidence",
+	"Create a least-privilege custom agent profile",
+	"Explain MCP local, HTTP, and SSE transport choices",
+	"Practice Copilot CLI sessions, plans, and programmatic prompts",
+	"Configure and explain cloud-agent setup steps",
+	"Record durable state and identify context-drift risks",
+	"Diagnose an agent failure using logs and workflow artifacts",
+	"Design a multi-agent workflow with clear ownership and concurrency control",
+	"Apply GitHub guardrails: narrow permissions, reviews, and rulesets",
+	"Complete a small branch-to-PR exercise with validation evidence",
+	"Review weak areas and write a final exam-day checklist",
+];
 
 const read = (key, fallback) => {
 	try {
@@ -103,6 +119,25 @@ const deleteMilestone = (id) => {
 	showToast("Milestone removed");
 };
 
+const loadStarterPlan = () => {
+	const items = read(MILESTONES_KEY, []);
+	const existingTexts = new Set(items.map((item) => item.text));
+	const newItems = STARTER_MILESTONES.filter((text) => !existingTexts.has(text)).map((text) => ({
+		id: crypto.randomUUID(),
+		text,
+		done: false,
+	}));
+
+	if (!newItems.length) {
+		showToast("Starter plan is already loaded");
+		return;
+	}
+
+	write(MILESTONES_KEY, [...items, ...newItems]);
+	renderMilestones();
+	showToast(`${newItems.length} study milestones added`);
+};
+
 const renderReflections = () => {
 	const notes = read(REFLECTIONS_KEY, []);
 	reflectionList.innerHTML = "";
@@ -175,6 +210,8 @@ reflectionForm.addEventListener("submit", (event) => {
 	reflectionInput.value = "";
 	reflectionInput.focus();
 });
+
+loadPlanButton.addEventListener("click", loadStarterPlan);
 
 setTheme(localStorage.getItem(THEME_KEY) === "dark");
 renderMilestones();

@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="../style.css" />
+		<title>GH-600 Domain 4: Evaluation and Tuning</title>
+	</head>
+	<body>
+		<main class="app domain-page">
+			<header class="app-header"><div><a class="back-link" href="../index.html">← Back to study sprint</a><h1>Domain 4: Perform evaluation, error analysis, and tuning</h1><p>Use observable evidence to identify a root cause before changing prompts, tools, or setup.</p></div></header>
+			<nav class="domain-navigation" aria-label="GH-600 domains"><a href="architecture-sdlc.html">1. Architecture</a><a href="tools-environment.html">2. Tools</a><a href="memory-execution.html">3. Memory</a><a aria-current="page" href="evaluation-tuning.html">4. Evaluation</a><a href="multi-agent.html">5. Coordination</a><a href="guardrails-accountability.html">6. Guardrails</a></nav>
+			<section class="card domain-content"><h2>Evidence first</h2><div class="evidence-grid"><article><h3>Checks</h3><p>Tests, linting, type checks, and scans show behavior and security signals.</p></article><article><h3>Run evidence</h3><p>Workflow logs and artifacts expose command, environment, and output failures.</p></article><article><h3>Traceability</h3><p>Session logs, PR comments, and audit logs show what happened and who acted.</p></article></div></section>
+			<section class="card domain-content"><h2>Tuning order</h2><ol><li>Check task clarity and success criteria.</li><li>Check repository instructions and current conventions.</li><li>Check tool scope and permissions.</li><li>Check setup, dependencies, secrets, and runner environment.</li><li>Check current repository and session state before considering model changes.</li></ol><p>For example, an authentication failure during dependency installation points to package access or setup—not a reason to grant broad shell access.</p></section>
+			<section class="card domain-content"><h2>Recall checks</h2><ol><li>When should you tune instructions rather than tools?</li><li>Which artifact setting turns a missing expected file into a failure?</li><li>Which audit event records manual artifact deletion?</li></ol><p class="source-note">Adapted from the <a href="https://gist.github.com/naim149/a8aa41c7468685b7d984822c38863aae">GH-600 Public Study Guide</a>.</p></section>
+		</main>
+	</body>
+</html>

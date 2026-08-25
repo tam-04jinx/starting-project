@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="../style.css" />
+		<title>GH-600 Domain 2: Tools and Environment</title>
+	</head>
+	<body>
+		<main class="app domain-page">
+			<header class="app-header"><div><a class="back-link" href="../index.html">← Back to study sprint</a><h1>Domain 2: Implement tool use and environment interaction</h1><p>Match custom agents, MCP, CLI, and cloud setup to the smallest capability needed.</p></div></header>
+			<nav class="domain-navigation" aria-label="GH-600 domains"><a href="architecture-sdlc.html">1. Architecture</a><a aria-current="page" href="tools-environment.html">2. Tools</a><a href="memory-execution.html">3. Memory</a><a href="evaluation-tuning.html">4. Evaluation</a><a href="multi-agent.html">5. Coordination</a><a href="guardrails-accountability.html">6. Guardrails</a></nav>
+			<section class="card domain-content"><h2>Key implementation artifacts</h2><div class="evidence-grid"><article><h3>Instructions</h3><p><code>.github/copilot-instructions.md</code> sets repository-wide guidance.</p></article><article><h3>Custom agent</h3><p><code>.github/agents/*.agent.md</code> declares a purpose and limited tools.</p></article><article><h3>Cloud setup</h3><p><code>.github/workflows/copilot-setup-steps.yml</code> prepares the cloud-agent environment.</p></article></div></section>
+			<section class="card domain-content"><h2>High-yield distinctions</h2><ul><li><code>description</code> is required in custom-agent frontmatter; omit tools only deliberately.</li><li><code>read</code> and <code>search</code> inspect a repository; add <code>edit</code>, <code>execute</code>, or <code>agent</code> only when needed.</li><li>Custom-agent YAML uses <code>mcp-servers</code>; JSON MCP configuration uses <code>mcpServers</code>.</li><li>Top-level <code>command</code> and <code>args</code> identify a local MCP process; top-level <code>url</code> identifies a remote HTTP or SSE server.</li><li>Use <code>copilot -p</code> for programmatic prompts and <code>--no-ask-user</code> to avoid CI hangs.</li></ul></section>
+			<section class="card domain-content"><h2>Recall checks</h2><ol><li>Which custom-agent tool invokes a specialist agent?</li><li>Where does cloud-agent setup live?</li><li>How does <code>/fleet</code> differ from <code>/delegate</code>?</li></ol><p class="source-note">Adapted from the <a href="https://gist.github.com/naim149/a8aa41c7468685b7d984822c38863aae">GH-600 Public Study Guide</a>.</p></section>
+		</main>
+	</body>
+</html>

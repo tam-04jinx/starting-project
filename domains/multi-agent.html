@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="../style.css" />
+		<title>GH-600 Domain 5: Multi-Agent Coordination</title>
+	</head>
+	<body>
+		<main class="app domain-page">
+			<header class="app-header"><div><a class="back-link" href="../index.html">← Back to study sprint</a><h1>Domain 5: Orchestrate multi-agent coordination</h1><p>Divide work by ownership, make handoffs durable, and prevent agents from colliding.</p></div></header>
+			<nav class="domain-navigation" aria-label="GH-600 domains"><a href="architecture-sdlc.html">1. Architecture</a><a href="tools-environment.html">2. Tools</a><a href="memory-execution.html">3. Memory</a><a href="evaluation-tuning.html">4. Evaluation</a><a aria-current="page" href="multi-agent.html">5. Coordination</a><a href="guardrails-accountability.html">6. Guardrails</a></nav>
+			<section class="card domain-content"><h2>Use multiple agents only when work splits cleanly</h2><p>Good patterns include coordinator/worker, reviewer/verifier, and plan → implement → review pipelines. Avoid parallel agents when work is inherently sequential or they must edit the same files.</p><div class="evidence-grid"><article><h3><code>needs</code></h3><p>Orders dependent workflow jobs.</p></article><article><h3>Artifacts</h3><p>Pass review, audit, and plan files between jobs.</p></article><article><h3>Matrix</h3><p>Runs the same job for distinct agents or bounded areas.</p></article></div></section>
+			<section class="card domain-content"><h2>Conflict controls</h2><ul><li>Give each worker a separate branch or disjoint file ownership.</li><li>Use committed files, PR comments, artifacts, or summaries for handoffs—not chat-only memory.</li><li>Use workflow-level concurrency with <code>cancel-in-progress: true</code> when only the newest PR validation run matters.</li><li>Use required checks and review before integration.</li></ul></section>
+			<section class="card domain-content"><h2>Recall checks</h2><ol><li>What does <code>needs: [review, audit]</code> guarantee?</li><li>When is workflow concurrency useful?</li><li>Why is a shared mutable branch risky for parallel agents?</li></ol><p class="source-note">Adapted from the <a href="https://gist.github.com/naim149/a8aa41c7468685b7d984822c38863aae">GH-600 Public Study Guide</a>.</p></section>
+		</main>
+	</body>
+</html>

@@ -32,6 +32,14 @@ p {
 	color: #4b5563;
 }
 
+a {
+	color: #1d4ed8;
+}
+
+body.dark a {
+	color: #93c5fd;
+}
+
 body.dark p {
 	color: #cbd5e1;
 }
@@ -56,6 +64,117 @@ body.dark p {
 	border-radius: 14px;
 	padding: 1rem;
 	box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.section-heading {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+}
+
+.domain-list {
+	margin: 1rem 0 0;
+	padding-left: 1.4rem;
+	display: grid;
+	gap: 0.5rem;
+	line-height: 1.45;
+}
+
+.domain-list a {
+	color: inherit;
+	text-decoration-color: #93c5fd;
+	text-underline-offset: 0.2em;
+}
+
+.domain-page {
+	max-width: 960px;
+}
+
+.domain-page .app-header {
+	align-items: flex-start;
+}
+
+.back-link {
+	display: inline-block;
+	margin-bottom: 0.75rem;
+	font-weight: 600;
+}
+
+.domain-navigation {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin-top: 1rem;
+}
+
+.domain-navigation a {
+	border: 1px solid #bfdbfe;
+	border-radius: 999px;
+	padding: 0.35rem 0.65rem;
+	color: #1e3a8a;
+	font-size: 0.9rem;
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.domain-navigation a[aria-current="page"] {
+	background: #2563eb;
+	border-color: #2563eb;
+	color: #fff;
+}
+
+body.dark .domain-navigation a {
+	border-color: #475569;
+	color: #bfdbfe;
+}
+
+.domain-content {
+	display: grid;
+	gap: 1rem;
+}
+
+.domain-content h2,
+.domain-content h3 {
+	margin: 0;
+}
+
+.domain-content ul,
+.domain-content ol {
+	margin: 0.65rem 0 0;
+	padding-left: 1.3rem;
+	line-height: 1.55;
+}
+
+.evidence-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+	gap: 0.75rem;
+}
+
+.evidence-grid article {
+	border: 1px solid #dbeafe;
+	border-radius: 10px;
+	padding: 0.85rem;
+	background: #f8fafc;
+}
+
+.evidence-grid h3 {
+	font-size: 1rem;
+}
+
+.evidence-grid p {
+	margin-top: 0.3rem;
+	font-size: 0.95rem;
+}
+
+body.dark .evidence-grid article {
+	background: #0b1220;
+	border-color: #334155;
+}
+
+.source-note {
+	font-size: 0.9rem;
 }
 
 body.dark .card {
@@ -178,7 +297,8 @@ body.dark .item {
 	}
 
 	.row,
-	.app-header {
+	.app-header,
+	.section-heading {
 		flex-direction: column;
 		align-items: stretch;
 	}
